@@ -168,7 +168,7 @@ class cSignalHierarchy:
                 logger.info("TRAINING_MODEL_LEVEL_SIGNAL " + str(level) + " " + str(signal));
                 lEngine = autof.cForecastEngine()
                 lEngine.mOptions = self.mOptions;
-                lEngine.train(iAllLevelsDataset , iDateColumn , signal, H);
+                lEngine.train(iAllLevelsDataset , iDateColumn , signal, H, iExogenousData=self.mExogenousData);
                 lEngine.getModelInfo();
                 self.mModels[level][signal] = lEngine;
         # print("CREATED_MODELS", self.mLevels, self.mModels)
